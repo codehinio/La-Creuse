@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Creuse (23) | Guide Complet</title>
+    <style>
+        :root {
+            --primary: #1b4332;
+            --secondary: #d4a373;
+            --bg: #fdfdfd;
+            --text: #2d2d2d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', serif; line-height: 1.8; color: var(--text); background-color: var(--bg); }
+
+        /* NAV */
+        nav {
+            background-color: var(--primary);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        nav a:hover { color: var(--secondary); }
+
+        /* HERO */
+        header {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        header h1 { font-size: 3.5rem; letter-spacing: 5px; margin-bottom: 10px; }
+
+        /* CONTENT */
+        .container { max-width: 800px; margin: 50px auto; padding: 0 25px; }
+        .page-section { display: none; animation: fadeIn 0.5s ease; }
+        .page-section.active { display: block; }
+
+        h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 30px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; }
+        h3 { font-size: 1.6rem; color: var(--primary); margin-top: 40px; margin-bottom: 15px; }
+        p { margin-bottom: 20px; font-size: 1.15rem; text-align: justify; }
+
+        .highlight-box {
+            background: #f1f3f0;
+            padding: 30px;
+            border-left: 6px solid var(--primary);
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        .img-container { width: 100%; margin: 40px 0; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .img-container img { width: 100%; display: block; }
+
+        footer { text-align: center; padding: 60px; font-family: sans-serif; font-size: 0.9rem; color: #888; border-top: 1px solid #eee; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="showPage('home')">Accueil</a>
+        <a onclick="showPage('nature')">Nature</a>
+        <a onclick="showPage('culture')">Culture</a>
+        <a onclick="showPage('gastro')">Gastronomie</a>
+    </nav>
+
+    <header>
+        <h1>LA CREUSE</h1>
+        <p>Département 23 - Nouvelle-Aquitaine</p>
+    </header>
+
+    <div class="container">
+
+        <section id="home" class="page-section active">
+            <h2>Bienvenue dans la Creuse</h2>
+            <p>Située au cœur de la France, la Creuse est un territoire secret, loin des grands flux touristiques. C'est une terre d'authenticité où la nature et l'histoire se rencontrent pour offrir une expérience de sérénité absolue.</p>
+            <p>Ce département se caractérise par ses paysages de moyenne montagne, ses vallées verdoyantes et ses rivières sauvages. Pour ceux qui cherchent à s'évader du stress urbain, le "23" est la destination idéale.</p>
+            <div class="highlight-box">
+                "La Creuse n'est pas un département que l'on traverse, c'est une terre que l'on découvre avec patience."
+            </div>
+        </section>
+
+        <section id="nature" class="page-section">
+            <h2>Le Poumon Vert de la France</h2>
+            <p>La Creuse possède l'un des airs les plus purs du pays. Ici, la nature est restée souveraine.</p>
+            
+            <h3>Le Lac de Vassivière</h3>
+            <p>Véritable mer intérieure de 1000 hectares, le Lac de Vassivière est le joyau du territoire. Entouré de forêts de sapins et de landes, il offre un cadre magnifique pour la randonnée et les sports nautiques respectueux de l'environnement.</p>
+            
+            <h3>Les Monts de Guéret</h3>
+            <p>Ce massif forestier abrite des sentiers mythiques et le célèbre parc des Loups de Chabrières. C'est un lieu où l'on peut encore ressentir la force sauvage de la faune européenne originelle.</p>
+        </section>
+
+        <section id="culture" class="page-section">
+            <h2>Un Patrimoine de Savoir-faire</h2>
+            <p>L'histoire de la Creuse est celle d'un peuple travailleur et créatif, dont les œuvres ont voyagé dans le monde entier.</p>
+
+            <h3>La Tapisserie d'Aubusson</h3>
+            <p>Classée au patrimoine mondial de l'UNESCO, la tapisserie d'Aubusson est une tradition d'excellence vieille de six siècles. Elle représente la fusion parfaite tra l'artisanat de précision et la vision artistique contemporaine.</p>
+
+            <h3>Les Bâtisseurs de l'Ombre</h3>
+            <p>Les "Maçons de la Creuse" sont une part essentielle de l'identité locale. Pendant des générations, ces hommes ont quitté leurs villages pour construire les grands édifices de Paris, laissant leur empreinte sur l'architecture de la capitale française.</p>
+        </section>
+
+        <section id="gastro" class="page-section">
+            <h2>Les Saveurs du Terroir</h2>
+            <p>La cuisine creusoise est généreuse e basée sur les produits de la terre.</p>
+            
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=1200&q=80" alt="Gastronomie">
+            </div>
+
+            <h3>Le Gâteau Creusois</h3>
+            <p>Ce dessert mythique, riche en noisettes, est le symbole de la gourmandise locale. Sa recette, jalousement gardée, offre une texture moelleuse et un goût boisé unique qui ravit tous les voyageurs.</p>
+
+            <h3>Le Pâté aux Pommes de Terre</h3>
+            <p>Plat emblématique des fêtes de famille, il combine la simplicité de la pomme de terre avec la richesse de la crème fraîche locale, le tout enveloppé dans une pâte feuilletée croustillante.</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Badr Kabouri - 2026</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({top: 400, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
